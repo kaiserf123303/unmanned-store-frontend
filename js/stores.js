@@ -1,23 +1,15 @@
-const table = document.getElementById("storeTable");
-
-table.innerHTML = `
-  <tr>
-    <th>商店</th>
-    <th>地點</th>
-    <th>狀態</th>
-    <th>操作</th>
-  </tr>
-`;
+const storeList = document.getElementById("storeList");
 
 stores.forEach(store => {
-  table.innerHTML += `
-    <tr>
-      <td>${store.name}</td>
-      <td>${store.location}</td>
-      <td>${store.status}</td>
-      <td>
-        <a href="store-detail.html?id=${store.id}">查看</a>
-      </td>
-    </tr>
+  const div = document.createElement("div");
+  div.className = `store-card ${store.status}`;
+
+  div.innerHTML = `
+    <h2>${store.name}</h2>
+    <p>📍 地點：${store.location}</p>
+    <p>📦 商品數：${store.products}</p>
+    <span class="status">${store.status}</span>
   `;
+
+  storeList.appendChild(div);
 });
