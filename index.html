@@ -1,6 +1,3 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,17 +6,20 @@ layout: null
   <title>AURA | Smart Unmanned Store</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <header class="header">
     <div class="logo">
-      <img src="images/logo.png" alt="AURA Logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="AURA" />
+      </a>
       <span>AURA</span>
     </div>
     <nav>
-      <a href="#">Products</a>
-      <a href="#">Stores</a>
-      <a href="#" class="login">Login</a>
+      <a href="products.html">Products</a>
+      <a href="stores.html">Stores</a>
+      <a href="login.html" class="login">Login</a>
     </nav>
   </header>
 
@@ -33,8 +33,12 @@ layout: null
         </p>
 
         <div class="hero-actions">
-          <button class="primary">Explore Store</button>
-          <button class="secondary">View Products</button>
+          <a href="stores.html">
+            <button class="primary">Explore Store</button>
+          </a>
+          <a href="products.html">
+            <button class="secondary">View Products</button>
+          </a>
         </div>
       </div>
 
@@ -62,6 +66,5 @@ layout: null
   </main>
 
 </body>
-
 
 </html>

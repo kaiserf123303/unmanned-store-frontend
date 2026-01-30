@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  font-size: 60px;
+  color: #3A5177;
+}
+
+.logo img {
+  width: 172.97px;
+  height: 115.31px;
+}
+
+
+/* ===== 主容器 ===== */
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+/* ===== 左側（背景 + 小可愛） ===== */
+  .login-left {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, #eaf3ff, #ffffff);
+  }
+
+  /* 小可愛 */
+  .mascot {
+    position: absolute;
+    bottom: 40px;
+    left: 55;
+    width: 560px;
+}
+
+/* ===== 右側登入區 ===== */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 登入卡片 */
+.login-card {
+  height: 700px;
+  width: 520px;
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #1f2937;
+}
+
+.subtitle {
+  margin: 10px 0 30px;
+  color: #6b7280;
+}
+
+/* 表單 */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #5bbcff;
+}
+
+/* 按鈕 */
+form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #5bbcff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #3fa9f5;
+}
+
+/* 底部 */
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-footer a {
+  color: #5bbcff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* ===== 響應式 ===== */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-left {
+    height: 240px;
+  }
+
+  .mascot {
+    width: 180px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .login-right {
+    flex: none;
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mascot {
+    width: 820px;
+    left: -120px;
+    bottom: 30px;
+  }
+}
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-left {
+    height: 300px;
+  }
+
+  .mascot {
+    position: absolute;
+    width: 520px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .login-right {
+    flex: none;
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 600px) {
+  .login-left {
+    height: 200px;
+  }
+
+  .mascot {
+    width: 300px;
+    opacity: 0.9;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 28px;
+  }
+}
+@media (max-width: 420px) {
+  .mascot {
+    display: none;
+  }
+}

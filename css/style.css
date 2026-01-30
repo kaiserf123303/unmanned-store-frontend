@@ -42,6 +42,14 @@ nav a.login {
   margin-right: 100px;
 }
 
+
+
+nav a.active {
+  color: #5bbcff;
+  border-bottom: 2px solid #5bbcff;
+  padding-bottom: 4px;
+}
+
 /* Hero */
 .hero {
   display: flex;
@@ -78,13 +86,17 @@ button {
   cursor: pointer;
   margin-right: 16px;
   font-size: 35px;
+    z-index: 2;
+
 }
 
 .primary {
   background: #5bbcff;
   color: white;
 }
-
+.hero-actions a {
+  text-decoration: none;
+}
 .secondary {
   background: transparent;
   border: 1px solid #5bbcff;
@@ -105,6 +117,225 @@ button {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
+} 
+
+
+
+/* Container */
+.container {
+  padding: 40px 60px;
+  padding-top: 0;
+}
+h1{
+  margin-top: 0;
+}
+/* Page Header */
+.page-header h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.tab {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #5bbcff;
+  color: #fff;
+  border-color: #5bbcff;
+}
+
+/* Store Grid */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Store Card */
+.store-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.store-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.store-card h3 {
+  margin: 10px 0 6px;
+  font-size: 22px;
+}
+
+.address {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tag {
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.tag.green {
+  background: #e7f7ed;
+  color: #2e8b57;
+}
+
+.tag.blue {
+  background: #eaf2ff;
+  color: #2d4f8c;
+}
+
+.tag.purple {
+  background: #f1ecff;
+  color: #6b4eff;
+}
+
+/* Status */
+.status {
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.status.operating {
+  color: #2e8b57;
+}
+
+.status.restocking {
+  color: #f4a100;
+}
+
+.status.maintenance {
+  color: #d9534f;
+}
+
+/* Button */
+.detail-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dbe4ff;
+  background: #f9fbff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.detail-btn:hover {
+  background: #eef4ff;
+}
+
+/* Products Page */
+.products-page {
+  padding: 60px;
+}
+
+/* 篩選列 */
+.product-filters {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px 200px;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.product-filters input,
+.product-filters select {
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* 商品 Grid：固定 6 個 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 關鍵 */
+  gap: 32px;
+}
+
+/* 商品卡片 */
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.product-card img {
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.product-card .category {
+  color: #5bbcff;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.product-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.product-card button {
+  background: #5bbcff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* RWD：平板 */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* RWD：手機 */
+@media (max-width: 768px) {
+  .product-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
