@@ -3,30 +3,68 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>AURA | Smart Stores</title>
+  <title>AURA | Product Detail</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-  <!-- Header -->
   <header class="header">
     <div class="logo">
       <a href="index.html">
         <img src="images/logo.png" alt="AURA" />
       </a>
       <span>AURA</span>
-
     </div>
 
     <nav class="nav">
-      <a href="products.html">Products</a>
+      <a href="products.html" class="active">Products</a>
       <a href="stores.html">Stores</a>
       <a href="login.html" class="login">Login</a>
     </nav>
   </header>
 
+  <main class="product-detail">
 
+    <!-- 商品主區 -->
+    <section class="product-main">
+      <div class="product-image">
+        <img src="images/products/controller.png" alt="Product">
+      </div>
+
+      <div class="product-info">
+        <h1>8BitDo Pro 2</h1>
+        <p class="price">$1,390</p>
+
+        <p class="description">
+          Wireless controller compatible with PC, Switch and Android.
+        </p>
+
+        <div class="product-status">
+          <span class="tag operating">Available</span>
+          <span class="tag">PC / Switch</span>
+        </div>
+
+        <div class="product-actions">
+          <button class="primary">Add to Compare</button>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 規格 -->
+    <section class="product-specs">
+      <h2>Specifications</h2>
+
+      <ul>
+        <li>Connection: Bluetooth / USB</li>
+        <li>Battery: Rechargeable</li>
+        <li>Compatibility: PC / Switch</li>
+      </ul>
+    </section>
+
+  </main>
 
 </body>
 

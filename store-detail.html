@@ -3,30 +3,78 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>AURA | Smart Stores</title>
+  <title>AURA | Store Detail</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-  <!-- Header -->
+  <!-- Header（沿用） -->
   <header class="header">
     <div class="logo">
       <a href="index.html">
         <img src="images/logo.png" alt="AURA" />
       </a>
       <span>AURA</span>
-
     </div>
 
     <nav class="nav">
       <a href="products.html">Products</a>
-      <a href="stores.html">Stores</a>
+      <a href="stores.html" class="active">Stores</a>
       <a href="login.html" class="login">Login</a>
     </nav>
   </header>
 
+  <main class="store-detail">
 
+    <!-- 門市資訊 -->
+    <section class="store-hero">
+
+      <!-- 左：門市資訊 -->
+      <div class="store-info">
+        <h1 class="store-name">AURA Taipei Main</h1>
+
+        <p class="store-address">
+          No.1, Taipei Main Rd, Taipei City
+        </p>
+
+        <span class="store-status operating">Operating</span>
+
+        <div class="store-tags">
+          <span>Laptops</span>
+          <span>Accessories</span>
+          <span>Components</span>
+        </div>
+      </div>
+
+      <!-- 右：門市主視覺 -->
+      <div class="store-visual">
+        <img src="images/store-main.png" alt="AURA Taipei Main Store">
+      </div>
+
+    </section>
+
+    <hr class="divider">
+
+    <!-- 門市商品 -->
+    <section class="store-products">
+
+      <h2 class="section-title">Available Products</h2>
+
+      <div class="product-filters">
+
+        <input type="text" class="filter-search" placeholder="Search product, brand or model..." />
+
+        <select class="filter-select">
+          <option>All Categories</option>
+          <option>Laptops</option>
+
+
+
+    </section>
+
+
+  </main>
 
 </body>
 

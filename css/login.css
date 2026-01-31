@@ -1,3 +1,6 @@
+/* =====================
+   Base
+===================== */
 * {
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
@@ -8,50 +11,57 @@ body {
   background: #f5f7fb;
 }
 
+/* =====================
+   Header (Auth Only)
+===================== */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 14px 30px;
+  padding: 18px 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 32px;
   color: #3A5177;
 }
 
 .logo img {
-  width: 172.97px;
-  height: 115.31px;
+  width: 56px;
+  height: auto;
 }
 
-
-/* ===== 主容器 ===== */
+/* =====================
+   Layout
+===================== */
 .login-page {
   display: flex;
-  height: 100vh;
+  min-height: calc(100vh - 80px);
 }
 
-/* ===== 左側（背景 + 小可愛） ===== */
-  .login-left {
-    flex: 1;
-    position: relative;
-    background: linear-gradient(135deg, #eaf3ff, #ffffff);
-  }
-
-  /* 小可愛 */
-  .mascot {
-    position: absolute;
-    bottom: 40px;
-    left: 55;
-    width: 560px;
+/* =====================
+   Left (Mascot)
+===================== */
+.login-left {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #eaf3ff, #ffffff);
 }
 
-/* ===== 右側登入區 ===== */
+.mascot {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  width: 560px;
+}
+
+/* =====================
+   Right (Card)
+===================== */
 .login-right {
   flex: 1;
   display: flex;
@@ -59,10 +69,9 @@ body {
   justify-content: center;
 }
 
-/* 登入卡片 */
 .login-card {
-  height: 700px;
   width: 520px;
+  max-width: 100%;
   background: white;
   border-radius: 16px;
   padding: 40px;
@@ -73,6 +82,7 @@ body {
   margin: 0;
   font-size: 32px;
   color: #1f2937;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
@@ -80,7 +90,9 @@ body {
   color: #6b7280;
 }
 
-/* 表單 */
+/* =====================
+   Form
+===================== */
 form label {
   display: block;
   margin-bottom: 6px;
@@ -95,14 +107,15 @@ form input {
   border-radius: 8px;
   border: 1px solid #d1d5db;
   font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 form input:focus {
   outline: none;
   border-color: #5bbcff;
+  box-shadow: 0 0 0 2px rgba(91, 188, 255, 0.15);
 }
 
-/* 按鈕 */
 form button {
   width: 100%;
   padding: 14px;
@@ -118,7 +131,9 @@ form button:hover {
   background: #3fa9f5;
 }
 
-/* 底部 */
+/* =====================
+   Footer / Links
+===================== */
 .login-footer {
   margin-top: 20px;
   text-align: center;
@@ -130,73 +145,140 @@ form button:hover {
   font-size: 14px;
 }
 
-/* ===== 響應式 ===== */
-@media (max-width: 900px) {
-  .login-page {
-    flex-direction: column;
-  }
-
-  .login-left {
-    height: 240px;
-  }
-
-  .mascot {
-    width: 180px;
-    bottom: 20px;
-    left: 20px;
-  }
-
-  .login-right {
-    flex: none;
-    padding: 40px 20px;
-  }
+.register-hint {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #6b7280;
 }
 
+.register-link {
+  margin-left: 4px;
+  color: #5bbcff;
+  font-weight: 500;
+}
+
+/* =====================
+   Divider
+===================== */
+.divider {
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+/* =====================
+   Social Login
+===================== */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-btn img {
+  width: 20px;
+}
+
+.social-btn:hover {
+  background: #f9fafb;
+  transform: translateY(-1px);
+}
+
+.social-btn.google:hover {
+  border-color: #ea4335;
+}
+
+.social-btn.facebook:hover {
+  border-color: #1877f2;
+}
+
+/* =====================
+   Reset only
+===================== */
+.reset-card {
+  padding-top: 32px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #5bbcff;
+}
+
+/* =====================
+   Responsive
+===================== */
 @media (max-width: 1200px) {
   .mascot {
-    width: 820px;
-    left: -120px;
-    bottom: 30px;
+    width: 520px;
+    left: -80px;
   }
 }
+
 @media (max-width: 900px) {
   .login-page {
     flex-direction: column;
   }
 
   .login-left {
-    height: 300px;
+    height: 260px;
   }
 
   .mascot {
-    position: absolute;
-    width: 520px;
+    width: 420px;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
   }
 
   .login-right {
-    flex: none;
     padding: 40px 20px;
   }
 }
-@media (max-width: 600px) {
-  .login-left {
-    height: 200px;
-  }
 
+@media (max-width: 600px) {
   .mascot {
     width: 300px;
     opacity: 0.9;
   }
 
   .login-card {
-    width: 100%;
     max-width: 360px;
     padding: 28px;
   }
 }
+
 @media (max-width: 420px) {
   .mascot {
     display: none;
