@@ -23,7 +23,7 @@ body {
   gap: 12px;
   font-weight: bold;
   font-size: 60px;
-  color: #3A5177;
+  color: #3a5177;
 }
 
 .logo img {
@@ -41,8 +41,6 @@ nav a {
 nav a.login {
   margin-right: 100px;
 }
-
-
 
 nav a.active {
   color: #5bbcff;
@@ -62,12 +60,12 @@ nav a.active {
 }
 
 .hero-left h1 {
-  font-size: 70px;
+  font-size: 60px;
   margin-bottom: 20px;
 }
 
-.hero-desc{
-  font-size: 48px;
+.hero-desc {
+  font-size: 40px;
 }
 .hero-left p {
   color: #666;
@@ -76,7 +74,6 @@ nav a.active {
 
 .hero-actions {
   margin-top: 32px;
-
 }
 
 button {
@@ -86,8 +83,7 @@ button {
   cursor: pointer;
   margin-right: 16px;
   font-size: 35px;
-    z-index: 2;
-
+  z-index: 2;
 }
 
 .primary {
@@ -107,7 +103,7 @@ button {
 .hero-right {
   flex: 1;
   position: relative;
-  height: 500px;  
+  height: 500px;
 }
 
 .mascot {
@@ -118,16 +114,14 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-} 
-
-
+}
 
 /* Container */
 .container {
   padding: 40px 60px;
   padding-top: 0;
 }
-h1{
+h1 {
   margin-top: 0;
 }
 /* Page Header */
@@ -160,33 +154,55 @@ h1{
 /* Store Grid */
 .store-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 40px;
+}
+
+.store-filters {
+  width: 800px;
+}
+
+.filter-row {
+  width: 600px;
+}
+
+.filter-select {
+  width: 200px;
+  font-size: 20px;
+}
+
+.filter-input {
+  width: 300px;
+  font-size: 20px;
 }
 
 /* Store Card */
 .store-card {
   background: #fff;
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
 }
 
 .store-image {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 16px;
+  max-height: 300px;
+  object-fit: contain;
+  margin-bottom: 24px;
 }
 
 .store-card h3 {
-  margin: 10px 0 6px;
-  font-size: 22px;
+  margin: 14px 0 8px;
+  font-size: 24px;
 }
 
 .address {
-  font-size: 14px;
+  font-size: 15px;
   color: #777;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 /* Tags */
@@ -220,8 +236,8 @@ h1{
 
 /* Status */
 .status {
-  font-weight: 500;
-  margin-bottom: 16px;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .status.operating {
@@ -239,12 +255,13 @@ h1{
 /* Button */
 .detail-btn {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 16x;
+  border-radius: 12px;
   border: 1px solid #dbe4ff;
   background: #f9fbff;
   cursor: pointer;
   font-size: 16px;
+  margin-top: auto;
 }
 
 .detail-btn:hover {
@@ -284,7 +301,7 @@ h1{
   background: #ffffff;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   text-align: center;
 }
 
@@ -329,7 +346,7 @@ h1{
 .store-hero {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -380,10 +397,9 @@ h1{
 /* 右側圖片 */
 .store-visual img {
   width: 100%;
-  max-width: 640px;
+  max-width: 720px;
   display: block;
 }
-
 
 /* =====================
    Product Detail
@@ -422,7 +438,6 @@ h1{
   margin-top: 24px;
 }
 
-
 /* RWD：平板 */
 @media (max-width: 1200px) {
   .product-grid {
@@ -441,9 +456,7 @@ h1{
   }
 }
 
-
 @media (max-width: 1200px) {
-
   .logo {
     font-size: 40px;
   }
@@ -481,7 +494,6 @@ h1{
   }
 }
 @media (max-width: 900px) {
-
   .hero {
     flex-direction: column;
     align-items: center;
@@ -523,7 +535,6 @@ h1{
   }
 }
 @media (max-width: 600px) {
-
   .header {
     flex-direction: column;
     gap: 16px;

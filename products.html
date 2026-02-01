@@ -1,124 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AURA｜智慧無人商店</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>AURA | Smart Unmanned Store</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-
-  <header class="header">
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/logo.png" alt="AURA Logo">
-      </a>
-      <span>AURA</span>
-    </div>
-    <nav>
-      <a href="index.html" class="active">Products</a>
-      <a href="stores.html">Stores</a>
-      <a href="login.html" class="login">Login</a>
-    </nav>
-  </header>
-
-  <main class="products-page">
-
-    <!-- 篩選列 -->
-    <section class="product-filters">
-      <select>
-        <option>All Categories</option>
-        <option>Smartphones</option>
-        <option>Laptops</option>
-        <option>Accessories</option>
-        <option>Components</option>
-      </select>
-
-      <input type="text" placeholder="Search product name or brand..." />
-
-      <select>
-        <option>All Brands</option>
-        <option>AURA</option>
-        <option>GameSir</option>
-        <option>8BitDo</option>
-      </select>
-
-      <select>
-        <option>Sort by</option>
-        <option>Price: Low to High</option>
-        <option>Price: High to Low</option>
-      </select>
-    </section>
-
-    <!-- 商品列表 -->
-    <section class="product-grid">
-
-      <!-- 商品卡片 -->
-      <div class="product-card">
-        <img src="images/products/controller.png" alt="">
-        <h3>AURA Game Controller</h3>
-        <p class="category">Accessories</p>
-        <p class="price">$1,390</p>
-        <a href="products-detail.html">
-          <button>View Details</button>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="AURA 標誌" />
         </a>
+        <span>AURA</span>
       </div>
+      <nav>
+        <a href="index.html" class="active">產品</a>
+        <a href="stores.html">門市</a>
+        <a href="login.html" class="login">登入</a>
+      </nav>
+    </header>
 
-      <!-- 複製這個卡片共 6 個 -->
-      <div class="product-card">
-        <img src="images/products/earbuds.png" alt="">
-        <h3>AURA Pods</h3>
-        <p class="category">Accessories</p>
-        <p class="price">$990</p>
-        <a href="products-detail.html">
-          <button>View Details</button>
-        </a>
-      </div>
+    <main class="products-page">
+      <!-- 篩選列 -->
+      <section class="product-filters">
+        <select>
+          <option>所有分類</option>
+          <option>智慧型手機</option>
+          <option>筆記型電腦</option>
+          <option>配件</option>
+          <option>零組件</option>
+        </select>
 
-      <div class="product-card">
-        <img src="images/products/keyboard.png" alt="">
-        <h3>AURA Keyboard</h3>
-        <p class="category">Accessories</p>
-        <p class="price">$1,590</p>
-        <a href="products-detail.html">
-          <button>View Details</button>
-        </a>
-      </div>
+        <input type="text" placeholder="搜尋產品名稱或品牌…" />
 
-      <div class="product-card">
-        <img src="images/products/mouse.png" alt="">
-        <h3>AURA Mouse</h3>
-        <p class="category">Accessories</p>
-        <p class="price">$790</p>
-        <a href="products-detail.html">
-          <button>View Details</button>
-        </a>
-      </div>
+        <select>
+          <option>所有品牌</option>
+          <option>AURA</option>
+          <option>GameSir</option>
+          <option>8BitDo</option>
+        </select>
 
-      <div class="product-card">
-        <img src="images/products/laptop.png" alt="">
-        <h3>AURA Laptop</h3>
-        <p class="category">Laptops</p>
-        <p class="price">$32,900</p>
-        <a href="products-detail.html">
-          <button>View Details</button>
-        </a>
-      </div>
+        <select>
+          <option>排序方式</option>
+          <option>價格：由低到高</option>
+          <option>價格：由高到低</option>
+        </select>
+      </section>
 
-      <div class="product-card">
-        <img src="images/products/gpu.png" alt="">
-        <h3>AURA Graphics Card</h3>
-        <p class="category">Components</p>
-        <p class="price">$19,900</p>
-        <a href="products-detail.html">
-          <button>View Details</button>
-        </a>
-      </div>
+      <!-- 商品列表 -->
+      <section class="product-grid">
+        <!-- 商品卡片 -->
+        <div class="product-card">
+          <img src="images/products/controller.png" alt="遊戲控制器" />
+          <h3>AURA 遊戲控制器</h3>
+          <p class="category">配件</p>
+          <p class="price">NT$1,390</p>
+          <a href="products-detail.html">
+            <button>查看詳情</button>
+          </a>
+        </div>
 
-    </section>
+        <!-- 以下為其他商品卡片 -->
+        <div class="product-card">
+          <img src="images/products/earbuds.png" alt="無線耳機" />
+          <h3>AURA Pods</h3>
+          <p class="category">配件</p>
+          <p class="price">NT$990</p>
+          <a href="products-detail.html">
+            <button>查看詳情</button>
+          </a>
+        </div>
 
-  </main>
-</body>
+        <div class="product-card">
+          <img src="images/products/keyboard.png" alt="鍵盤" />
+          <h3>AURA 鍵盤</h3>
+          <p class="category">配件</p>
+          <p class="price">NT$1,590</p>
+          <a href="products-detail.html">
+            <button>查看詳情</button>
+          </a>
+        </div>
 
+        <div class="product-card">
+          <img src="images/products/mouse.png" alt="滑鼠" />
+          <h3>AURA 滑鼠</h3>
+          <p class="category">配件</p>
+          <p class="price">NT$790</p>
+          <a href="products-detail.html">
+            <button>查看詳情</button>
+          </a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/products/laptop.png" alt="筆記型電腦" />
+          <h3>AURA 筆記型電腦</h3>
+          <p class="category">筆記型電腦</p>
+          <p class="price">NT$32,900</p>
+          <a href="products-detail.html">
+            <button>查看詳情</button>
+          </a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/products/gpu.png" alt="顯示卡" />
+          <h3>AURA 顯示卡</h3>
+          <p class="category">零組件</p>
+          <p class="price">NT$19,900</p>
+          <a href="products-detail.html">
+            <button>查看詳情</button>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

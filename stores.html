@@ -1,125 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AURA｜智慧門市</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>AURA | Smart Stores</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/logo.png" alt="AURA" />
-      </a>
-      <span>AURA</span>
-
-    </div>
-
-    <nav class="nav">
-      <a href="products.html">Products</a>
-      <a href="#" class="active">Stores</a>
-      <a href="login.html" class="login">Login</a>
-    </nav>
-  </header>
-
-  <!-- Main -->
-  <main class="container">
-
-    <!-- Page Title -->
-    <section class="page-header">
-      <h1>Smart Stores</h1>
-
-      <!-- Filter Tabs -->
-      <div class="tabs">
-        <button class="tab active">All</button>
-        <button class="tab">Operating</button>
-        <button class="tab">Restocking</button>
-        <button class="tab">Maintenance</button>
-      </div>
-    </section>
-
-    <!-- Store List -->
-    <section class="store-grid">
-
-      <!-- Store Card -->
-      <div class="store-card">
-        <img src="images/store.png" class="store-image" />
-
-        <h3>AURA Taipei Main</h3>
-        <p class="address">No.1, Taipei Main Rd, Taipei City</p>
-
-        <div class="tags">
-          <span class="tag green">Laptops</span>
-          <span class="tag blue">Accessories</span>
-          <span class="tag purple">Components</span>
-        </div>
-
-        <div class="status operating">
-          ● Operating
-        </div>
-        <a href="store-detail.html">
-          <button class="detail-btn">
-            View Details →
-          </button>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="AURA 標誌" />
         </a>
-
+        <span>AURA</span>
       </div>
 
-      <!-- Store Card -->
-      <div class="store-card">
-        <img src="images/store.png" class="store-image" />
+      <nav class="nav">
+        <a href="products.html">產品</a>
+        <a href="#" class="active">門市</a>
+        <a href="login.html" class="login">登入</a>
+      </nav>
+    </header>
 
-        <h3>AURA Xinyi</h3>
-        <p class="address">No.88, Xinyi Rd, Taipei City</p>
+    <!-- Main -->
+    <main class="container">
+      <!-- Page Title -->
+      <section class="page-header">
+        <h1>智慧門市</h1>
 
-        <div class="tags">
-          <span class="tag blue">Smartphones</span>
-          <span class="tag blue">Accessories</span>
+        <!-- Filter Tabs -->
+        <div class="store-filters">
+          <div class="filter-row">
+            <select class="filter-select">
+              <option>城市</option>
+              <option>台北市</option>
+              <option>新北市</option>
+              <option>台中市</option>
+            </select>
+
+            <select class="filter-select">
+              <option>行政區</option>
+              <option>信義區</option>
+              <option>中正區</option>
+              <option>大安區</option>
+            </select>
+          </div>
+
+          <div class="filter-row">
+            <input
+              class="filter-input"
+              type="text"
+              placeholder="搜尋門市名稱"
+            />
+          </div>
+
+          <button class="location-btn">📍 使用目前位置</button>
+        </div>
+      </section>
+
+      <!-- Store List -->
+      <section class="store-grid">
+        <!-- Store Card -->
+        <div class="store-card">
+          <img src="images/store.png" class="store-image" />
+
+          <h3>AURA 台北旗艦門市</h3>
+          <p class="address">台北市 台北大道一段 1 號</p>
+
+          <div class="tags">
+            <span class="tag green">筆記型電腦</span>
+            <span class="tag blue">配件</span>
+            <span class="tag purple">零組件</span>
+          </div>
+
+          <div class="status operating">● 營運中</div>
+          <a href="store-detail.html">
+            <button class="detail-btn">查看詳情 →</button>
+          </a>
         </div>
 
-        <div class="status restocking">
-          ● Restocking
+        <!-- Store Card -->
+        <div class="store-card">
+          <img src="images/store.png" class="store-image" />
+
+          <h3>AURA 信義門市</h3>
+          <p class="address">台北市 信義路 88 號</p>
+
+          <div class="tags">
+            <span class="tag blue">智慧型手機</span>
+            <span class="tag blue">配件</span>
+          </div>
+
+          <div class="status restocking">● 補貨中</div>
+
+          <a href="store-detail.html">
+            <button class="detail-btn">查看詳情 →</button>
+          </a>
         </div>
 
-        <a href="store-detail.html">
-          <button class="detail-btn">
-            View Details →
-          </button>
-        </a>
-      </div>
+        <!-- Store Card -->
+        <div class="store-card">
+          <img src="images/store.png" class="store-image" />
 
-      <!-- Store Card -->
-      <div class="store-card">
-        <img src="images/store.png" class="store-image" />
+          <h3>AURA 台北萬華門市</h3>
+          <p class="address">台北市 萬華街 27 號</p>
 
-        <h3>AURA Taipei Wonne</h3>
-        <p class="address">No.27, Wonne St, Taipei City</p>
+          <div class="tags">
+            <span class="tag green">筆記型電腦</span>
+            <span class="tag green">智慧型手機</span>
+            <span class="tag blue">配件</span>
+          </div>
 
-        <div class="tags">
-          <span class="tag green">Laptops</span>
-          <span class="tag green">Smartphones</span>
-          <span class="tag blue">Accessories</span>
+          <div class="status maintenance">● 維護中</div>
+
+          <a href="store-detail.html">
+            <button class="detail-btn">查看詳情 →</button>
+          </a>
         </div>
-
-        <div class="status maintenance">
-          ● Maintenance
-        </div>
-
-        <a href="store-detail.html">
-          <button class="detail-btn">
-            View Details →
-          </button>
-        </a>
-      </div>
-
-    </section>
-
-  </main>
-
-</body>
-
+      </section>
+    </main>
+  </body>
 </html>
