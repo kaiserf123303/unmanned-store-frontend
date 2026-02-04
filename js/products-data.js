@@ -1,6 +1,6 @@
 /* =========================
-   AURA 共用商品資料（最終版）
-   規格 specs 一律使用「顯示用完整字串」
+   AURA 共用商品資料（最終完整版）
+   specs 一律為顯示用字串
 ========================= */
 
 const PRODUCTS = [
@@ -51,8 +51,8 @@ const PRODUCTS = [
   status: "operating",
   tags: ["Gaming", "DPI"],
   specs: [
-    "感應器：光學感應",
     "最高 DPI：16000",
+    "感應器：光學",
     "連線方式：USB"
   ]
 },
@@ -67,9 +67,9 @@ const PRODUCTS = [
   status: "operating",
   tags: ["RGB", "Mechanical"],
   specs: [
-    "軸體類型：紅軸",
+    "軸體：紅軸",
     "連線方式：USB-C",
-    "背光效果：RGB"
+    "背光：RGB"
   ]
 },
 {
@@ -79,7 +79,7 @@ const PRODUCTS = [
   category: "筆電",
   price: 32900,
   image: "images/products/laptop.png",
-  description: "高效能筆記型電腦，適合開發與創作。",
+  description: "高效能筆電，適合開發與創作。",
   status: "operating",
   tags: ["i7", "16GB"],
   specs: [
@@ -102,6 +102,38 @@ const PRODUCTS = [
     "顯示記憶體：8GB GDDR6",
     "介面：PCIe 4.0",
     "最大解析度：4K"
+  ]
+},
+{
+  id: 107,
+  name: "AURA Phone X",
+  brand: "AURA",
+  category: "智慧型手機",
+  price: 18990,
+  image: "images/products/phone.png",
+  description: "AURA 自研智慧型手機。",
+  status: "operating",
+  tags: ["5G", "Android"],
+  specs: [
+    "螢幕：6.5 吋 OLED",
+    "處理器：Snapdragon",
+    "網路：5G"
+  ]
+},
+{
+  id: 108,
+  name: "AURA NVMe SSD 1TB",
+  brand: "AURA",
+  category: "零組件",
+  price: 2990,
+  image: "images/products/ssd.png",
+  description: "高速 NVMe 固態硬碟。",
+  status: "operating",
+  tags: ["NVMe"],
+  specs: [
+    "容量：1TB",
+    "介面：PCIe",
+    "讀取速度：高速"
   ]
 },
 
@@ -136,8 +168,8 @@ const PRODUCTS = [
   tags: ["Switch"],
   specs: [
     "連線方式：Bluetooth",
-    "重量：輕量設計",
-    "相容平台：Nintendo Switch"
+    "重量：輕量",
+    "平台：Switch"
   ]
 },
 {
@@ -147,13 +179,13 @@ const PRODUCTS = [
   category: "鍵盤",
   price: 1890,
   image: "images/products/keyboard.png",
-  description: "復古風格機械式鍵盤。",
+  description: "復古風格機械鍵盤。",
   status: "operating",
   tags: ["Mechanical"],
   specs: [
-    "軸體類型：青軸",
-    "連線方式：USB-C",
-    "背光效果：RGB"
+    "軸體：青軸",
+    "連線：USB-C",
+    "背光：RGB"
   ]
 },
 {
@@ -163,13 +195,13 @@ const PRODUCTS = [
   category: "滑鼠",
   price: 1090,
   image: "images/products/mouse.png",
-  description: "電競級滑鼠。",
+  description: "電競滑鼠。",
   status: "operating",
   tags: ["Gaming"],
   specs: [
     "最高 DPI：12000",
-    "感應器：光學感應",
-    "連線方式：USB"
+    "感應器：光學",
+    "連線：USB"
   ]
 },
 {
@@ -183,9 +215,9 @@ const PRODUCTS = [
   status: "operating",
   tags: ["Surround"],
   specs: [
-    "音效：7.1 環繞音效",
-    "麥克風：降噪麥克風",
-    "連線方式：USB"
+    "音效：7.1 環繞",
+    "麥克風：降噪",
+    "連線：USB"
   ]
 },
 {
@@ -195,13 +227,13 @@ const PRODUCTS = [
   category: "藍芽耳機",
   price: 2290,
   image: "images/products/earbuds.png",
-  description: "低延遲真無線藍牙耳機。",
+  description: "低延遲真無線耳機。",
   status: "operating",
   tags: ["Low Latency"],
   specs: [
-    "連線方式：Bluetooth",
-    "續航時間：最長 20 小時",
-    "延遲模式：遊戲低延遲"
+    "連線：Bluetooth",
+    "續航：20 小時",
+    "遊戲模式：支援"
   ]
 },
 
@@ -219,9 +251,9 @@ const PRODUCTS = [
   status: "operating",
   tags: ["PC", "Mobile"],
   specs: [
-    "連線方式：Bluetooth / USB",
-    "相容平台：PC / Android",
-    "電池：可充電式"
+    "連線：Bluetooth / USB",
+    "平台：PC / Android",
+    "電池：充電式"
   ]
 },
 {
@@ -235,9 +267,9 @@ const PRODUCTS = [
   status: "operating",
   tags: ["Xbox"],
   specs: [
-    "連線方式：USB",
-    "搖桿技術：霍爾感測",
-    "相容平台：Xbox / PC"
+    "連線：USB",
+    "搖桿：霍爾感測",
+    "平台：Xbox / PC"
   ]
 },
 {
@@ -251,9 +283,9 @@ const PRODUCTS = [
   status: "operating",
   tags: ["RGB"],
   specs: [
-    "軸體類型：紅軸",
-    "背光效果：RGB",
-    "連線方式：USB-C"
+    "軸體：紅軸",
+    "背光：RGB",
+    "連線：USB-C"
   ]
 },
 {
@@ -268,8 +300,8 @@ const PRODUCTS = [
   tags: ["DPI"],
   specs: [
     "最高 DPI：14000",
-    "感應器：光學感應",
-    "連線方式：USB"
+    "感應器：光學",
+    "連線：USB"
   ]
 },
 {
@@ -283,9 +315,9 @@ const PRODUCTS = [
   status: "operating",
   tags: ["Gaming"],
   specs: [
-    "音效：7.1 環繞音效",
+    "音效：7.1",
     "麥克風：降噪",
-    "連線方式：USB"
+    "連線：USB"
   ]
 },
 {
@@ -299,8 +331,8 @@ const PRODUCTS = [
   status: "operating",
   tags: ["Bluetooth"],
   specs: [
-    "連線方式：Bluetooth",
-    "續航時間：最長 22 小時",
+    "連線：Bluetooth",
+    "續航：22 小時",
     "遊戲模式：支援"
   ]
 },
@@ -310,22 +342,6 @@ const PRODUCTS = [
 ================================================== */
 {
   id: 401,
-  name: "Logitech Pro Controller",
-  brand: "Logitech",
-  category: "控制器",
-  price: 1890,
-  image: "images/products/controller.png",
-  description: "專業級電競控制器。",
-  status: "operating",
-  tags: ["Esports"],
-  specs: [
-    "連線方式：USB",
-    "反應速度：低延遲",
-    "相容平台：PC"
-  ]
-},
-{
-  id: 402,
   name: "Logitech MX Keyboard",
   brand: "Logitech",
   category: "鍵盤",
@@ -335,29 +351,29 @@ const PRODUCTS = [
   status: "operating",
   tags: ["Office"],
   specs: [
-    "連線方式：Bluetooth / USB",
-    "背光效果：自動調節",
-    "多裝置切換：支援"
+    "連線：Bluetooth / USB",
+    "背光：自動調節",
+    "多裝置：支援"
   ]
 },
 {
-  id: 403,
+  id: 402,
   name: "Logitech G Mouse",
   brand: "Logitech",
   category: "滑鼠",
   price: 2490,
   image: "images/products/mouse.png",
-  description: "HERO 感測器電競滑鼠。",
+  description: "HERO 感測器滑鼠。",
   status: "operating",
   tags: ["HERO"],
   specs: [
     "最高 DPI：25600",
     "感應器：HERO",
-    "連線方式：USB"
+    "連線：USB"
   ]
 },
 {
-  id: 404,
+  id: 403,
   name: "Logitech Gaming Headset",
   brand: "Logitech",
   category: "耳機",
@@ -367,41 +383,25 @@ const PRODUCTS = [
   status: "operating",
   tags: ["Surround"],
   specs: [
-    "音效：7.1 環繞音效",
-    "麥克風：可調式",
-    "連線方式：USB"
+    "音效：7.1",
+    "麥克風：可調",
+    "連線：USB"
   ]
 },
 {
-  id: 405,
-  name: "Logitech Bluetooth Earbuds",
-  brand: "Logitech",
-  category: "藍芽耳機",
-  price: 3490,
-  image: "images/products/earbuds.png",
-  description: "高音質真無線藍牙耳機。",
-  status: "operating",
-  tags: ["ANC"],
-  specs: [
-    "連線方式：Bluetooth",
-    "主動降噪：支援",
-    "續航時間：最長 30 小時"
-  ]
-},
-{
-  id: 406,
+  id: 404,
   name: "Logitech Creator Laptop",
   brand: "Logitech",
   category: "筆電",
   price: 42900,
   image: "images/products/laptop.png",
-  description: "創作者專用高效能筆電。",
+  description: "創作者專用筆電。",
   status: "operating",
   tags: ["Creator"],
   specs: [
-    "處理器：Intel Core i9",
+    "處理器：i9",
     "記憶體：32GB",
-    "儲存空間：1TB SSD"
+    "儲存：1TB SSD"
   ]
 },
 
@@ -410,38 +410,22 @@ const PRODUCTS = [
 ================================================== */
 {
   id: 501,
-  name: "Razer Wolverine Controller",
-  brand: "Razer",
-  category: "控制器",
-  price: 2590,
-  image: "images/products/controller.png",
-  description: "高階電競控制器。",
-  status: "operating",
-  tags: ["Esports"],
-  specs: [
-    "連線方式：USB",
-    "可程式按鍵：支援",
-    "反應速度：極低延遲"
-  ]
-},
-{
-  id: 502,
   name: "Razer Mechanical Keyboard",
   brand: "Razer",
   category: "鍵盤",
   price: 3890,
   image: "images/products/keyboard.png",
-  description: "RGB 電競機械式鍵盤。",
+  description: "RGB 電競鍵盤。",
   status: "operating",
   tags: ["Chroma"],
   specs: [
-    "軸體類型：光軸",
-    "背光效果：Razer Chroma RGB",
-    "連線方式：USB-C"
+    "軸體：光軸",
+    "背光：Chroma RGB",
+    "連線：USB-C"
   ]
 },
 {
-  id: 503,
+  id: 502,
   name: "Razer Gaming Mouse",
   brand: "Razer",
   category: "滑鼠",
@@ -452,56 +436,40 @@ const PRODUCTS = [
   tags: ["RGB"],
   specs: [
     "最高 DPI：30000",
-    "感應器：光學感應",
-    "連線方式：USB"
+    "感應器：光學",
+    "連線：USB"
   ]
 },
 {
-  id: 504,
+  id: 503,
   name: "Razer Gaming Headset",
   brand: "Razer",
   category: "耳機",
   price: 3490,
   image: "images/products/headset.png",
-  description: "THX 空間音效電競耳機。",
+  description: "THX 空間音效耳機。",
   status: "operating",
   tags: ["THX"],
   specs: [
-    "音效：THX Spatial Audio",
+    "音效：THX Spatial",
     "麥克風：降噪",
-    "連線方式：USB"
+    "連線：USB"
   ]
 },
 {
-  id: 505,
-  name: "Razer Wireless Earbuds",
-  brand: "Razer",
-  category: "藍芽耳機",
-  price: 3690,
-  image: "images/products/earbuds.png",
-  description: "低延遲電競藍牙耳機。",
-  status: "operating",
-  tags: ["Gaming"],
-  specs: [
-    "連線方式：Bluetooth",
-    "遊戲模式：支援",
-    "續航時間：最長 20 小時"
-  ]
-},
-{
-  id: 506,
+  id: 504,
   name: "Razer Blade Laptop",
   brand: "Razer",
   category: "筆電",
   price: 52900,
   image: "images/products/laptop.png",
-  description: "高階電競筆記型電腦。",
+  description: "高階電競筆電。",
   status: "operating",
   tags: ["RTX"],
   specs: [
-    "處理器：Intel Core i9",
-    "顯示卡：RTX 系列",
-    "螢幕更新率：240Hz"
+    "處理器：i9",
+    "顯示卡：RTX",
+    "螢幕：240Hz"
   ]
 }
 

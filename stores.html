@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- ================= Header ================= -->
   <header class="header">
     <div class="header-inner">
       <div class="logo">
@@ -21,32 +21,31 @@
 
       <nav class="nav">
         <a href="products.html">產品</a>
-        <a href="#" class="active">門市</a>
+        <a href="stores.html" class="active">門市</a>
         <a href="login.html" class="login">登入</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- ================= Main ================= -->
   <main class="container">
+
     <!-- Page Title -->
     <section class="page-header">
       <h1>智慧門市</h1>
 
+      <!-- 🔥 Filters（JS 控制） -->
       <div class="store-filters">
+
         <div class="filter-row">
-          <select class="filter-select">
-            <option>城市</option>
-            <option>台北市</option>
-            <option>新北市</option>
-            <option>台中市</option>
+          <!-- 城市（JS 動態產生） -->
+          <select class="filter-select" id="citySelect">
+            <option value="">城市</option>
           </select>
 
-          <select class="filter-select">
-            <option>行政區</option>
-            <option>信義區</option>
-            <option>中正區</option>
-            <option>大安區</option>
+          <!-- 行政區（JS 動態產生） -->
+          <select class="filter-select" id="districtSelect">
+            <option value="">行政區</option>
           </select>
         </div>
 
@@ -58,11 +57,13 @@
       </div>
     </section>
 
-    <!-- 🔥 JS 會把卡片渲染進這裡 -->
+    <!-- 🔥 JS 會把門市卡片渲染進這裡 -->
     <section class="store-grid" id="storeGrid"></section>
   </main>
 
-  <!-- 🔥 一定要加 -->
+  <!-- ================= Scripts ================= -->
+  <!-- ⚠️ 一定要先資料，再邏輯 -->
+  <script src="js/stores-data.js"></script>
   <script src="js/stores.js"></script>
 </body>
 

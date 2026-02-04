@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
@@ -20,58 +21,51 @@
       </div>
     </div>
   </header>
-  <div class="site-width">
-    <!-- Main -->
-    <div class="login-page">
-      <!-- Left / Mascot -->
-      <div class="login-left">
-        <img src="images/mascot-login.png" class="mascot" alt="AURA AI 助手" />
-      </div>
 
-      <!-- Right / Card -->
-      <div class="login-right">
-        <div class="login-card">
-          <h1>歡迎回來</h1>
-          <p class="subtitle">登入 AURA 智慧商店管理平台</p>
+  <!-- Main -->
+  <main class="site-width login-page">
 
-          <form>
-            <label>電子郵件</label>
-            <input type="email" placeholder="you@example.com" />
+    <!-- Left -->
+    <section class="login-left">
+      <img src="images/mascot-login.png" class="mascot" alt="AURA AI 助手" />
+    </section>
 
-            <label>密碼</label>
-            <input type="password" />
+    <!-- Right -->
+    <section class="login-right">
+      <div class="login-card">
 
-            <button type="submit">登入</button>
-          </form>
+        <h1>歡迎回來</h1>
+        <p class="subtitle">登入 AURA 智慧商店管理平台</p>
 
-          <div class="divider">
-            <span>或使用以下方式登入</span>
-          </div>
+        <!-- Login Form -->
+        <form id="loginForm">
+          <label for="email">電子郵件</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
 
-          <div class="social-login">
-            <button class="social-btn google">
-              <img src="images/icons/google.svg" alt="Google" />
-              使用 Google 登入
-            </button>
+          <label for="password">密碼</label>
+          <input type="password" id="password" required />
 
-            <button class="social-btn facebook">
-              <img src="images/icons/facebook.png" alt="Facebook" />
-              使用 Facebook 登入
-            </button>
-          </div>
+          <button type="submit">登入</button>
 
-          <div class="login-footer">
-            <a href="reset-password.html">忘記密碼？</a>
+          <p id="loginMsg" class="login-msg"></p>
+        </form>
 
-            <p class="register-hint">
-              還沒有帳號？
-              <a href="register.html" class="register-link">立即註冊</a>
-            </p>
-          </div>
+        <div class="login-footer">
+          <a href="reset-password.html">忘記密碼？</a>
+          <p class="register-hint">
+            還沒有帳號？
+            <a href="register.html">立即註冊</a>
+          </p>
         </div>
+
       </div>
-    </div>
-  </div>
+    </section>
+
+  </main>
+
+  <!-- 只引入 JS -->
+  <script src="js/login.js"></script>
+
 </body>
 
 </html>

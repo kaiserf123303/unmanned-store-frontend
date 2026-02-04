@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- Header（沿用） -->
+  <!-- ================= Header ================= -->
   <header class="header">
     <div class="header-inner">
       <div class="logo">
@@ -27,24 +27,21 @@
     </div>
   </header>
 
+  <!-- ================= Main ================= -->
   <main class="store-detail">
 
     <!-- 門市資訊 -->
     <section class="store-hero">
       <div class="store-info">
-        <h1 class="store-name">AURA 台北旗艦門市</h1>
-        <p class="store-address">台北市台北大道一段 1 號</p>
-        <span class="store-status operating">營運中</span>
+        <h1 class="store-name"></h1>
+        <p class="store-address"></p>
+        <span class="store-status"></span>
 
-        <div class="store-tags">
-          <span>筆記型電腦</span>
-          <span>配件</span>
-          <span>零組件</span>
-        </div>
+        <div class="store-tags"></div>
       </div>
 
       <div class="store-visual">
-        <img src="images/store-main.png" alt="AURA 台北旗艦門市" />
+        <img alt="門市圖片" />
       </div>
     </section>
 
@@ -54,25 +51,24 @@
     <section class="store-products">
       <h2 class="section-title">販售中商品</h2>
 
-      <!-- 🔽 篩選列（JS 會讀） -->
+      <!-- 篩選 -->
       <div class="product-filters">
-        <input type="text" class="filter-search" id="searchInput" placeholder="搜尋產品、品牌或型號…" />
+        <input type="text" class="filter-search" id="searchInput" placeholder="搜尋商品名稱或品牌…" />
 
         <select class="filter-select" id="categoryFilter">
-          <option value="all">所有分類</option>
-          <option value="laptop">筆記型電腦</option>
-          <option value="accessory">配件</option>
-          <option value="component">零組件</option>
+          <option value="">所有分類</option>
         </select>
       </div>
 
-      <!-- 🔽 商品容器（重點：裡面不要寫任何卡片） -->
+      <!-- 商品列表 -->
       <div class="product-grid" id="productGrid"></div>
-
     </section>
   </main>
 
-  <!-- JS -->
+  <!-- ================= Scripts ================= -->
+  <!-- ⚠️ 資料一定要先 -->
+  <script src="js/products-data.js"></script>
+  <script src="js/stores-data.js"></script>
   <script src="js/store-detail.js"></script>
 </body>
 

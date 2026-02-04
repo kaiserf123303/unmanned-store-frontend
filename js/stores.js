@@ -1,74 +1,73 @@
 /* =========================
    AURA 智慧門市 – 前端邏輯
-   ========================= */
+========================= */
 
-/* ===== 門市資料（之後可換 API） ===== */
-const stores = [
-  {
-    id: 1,
-    name: "AURA 台北旗艦門市",
-    city: "台北市",
-    district: "中正區",
-    address: "台北市 台北大道一段 1 號",
-    status: "operating",
-    tags: ["筆記型電腦", "配件", "零組件"],
-    image: "images/store.png"
-  },
-  {
-    id: 2,
-    name: "AURA 信義門市",
-    city: "台北市",
-    district: "信義區",
-    address: "台北市 信義路 88 號",
-    status: "restocking",
-    tags: ["智慧型手機", "配件"],
-    image: "images/store.png"
-  },
-  {
-    id: 3,
-    name: "AURA 台北萬華門市",
-    city: "台北市",
-    district: "萬華區",
-    address: "台北市 萬華街 27 號",
-    status: "maintenance",
-    tags: ["筆記型電腦", "智慧型手機", "配件"],
-    image: "images/store.png"
-  }
-];
-
-/* =========================
-   DOM
-   ========================= */
 const storeGrid = document.getElementById("storeGrid");
 const searchInput = document.querySelector(".filter-input");
 const citySelect = document.querySelectorAll(".filter-select")[0];
 const districtSelect = document.querySelectorAll(".filter-select")[1];
 const locationBtn = document.querySelector(".location-btn");
 
-/* =========================
-   狀態
-   ========================= */
 let currentStatus = "all";
 
 /* =========================
-   工具函式
-   ========================= */
+   Init Select Options
+========================= */
+function initCityOptions() {
+  const cities = [...new Set(STORES.map(s => s.city))];
+  citySelect.innerHTML = `<option value="">城市</option>`;
+  cities.forEach(c => {
+    citySelect.innerHTML += `<option value="${c}">${c}</option>`;
+  });
+}
+
+function initDistrictOptions(districts) {
+  districtSelect.innerHTML = `<option value="">行政區</option>`;
+  districts.forEach(d => {
+    districtSelect.innerHTML += `<option value="${d}">${d}</option>`;
+  });
+}
+
+/* =========================
+   City → District 聯動
+========================= */
+function updateDistrictOptions() {
+  let districts;
+
+  if (!citySelect.value) {
+    districts = [];
+  } else {
+    districts = [
+      ...new Set(
+        STORES
+          .filter(s => s.city === citySelect.value)
+          .map(s => s.district)
+      )
+    ];
+  }
+
+  initDistrictOptions(districts);
+
+  if (districtSelect.value && !districts.includes(districtSelect.value)) {
+    districtSelect.value = "";
+  }
+}
+
+/* =========================
+   Status Text
+========================= */
 function getStatusText(status) {
   switch (status) {
-    case "operating":
-      return "● 營運中";
-    case "restocking":
-      return "● 補貨中";
-    case "maintenance":
-      return "● 維護中";
-    default:
-      return "";
+    case "operating": return "● 營運中";
+    case "restocking": return "● 補貨中";
+    case "maintenance": return "● 維護中";
+    default: return "";
   }
 }
 
 /* =========================
    Render
-   ========================= */
+========================= */
 function renderStores(list) {
   storeGrid.innerHTML = "";
 
@@ -78,64 +77,50 @@ function renderStores(list) {
   }
 
   list.forEach(store => {
-    const card = document.createElement("div");
-    card.className = "store-card";
+    storeGrid.innerHTML += `
+      <div class="store-card">
+        <img src="${store.image}" class="store-image" />
 
-    card.innerHTML = `
-      <img src="${store.image}" class="store-image" alt="${store.name}" />
+        <h3>${store.name}</h3>
+        <p class="address">${store.address}</p>
 
-      <h3>${store.name}</h3>
-      <p class="address">${store.address}</p>
+        <div class="tags">
+          ${store.tags.map(t => `<span class="tag blue">${t}</span>`).join("")}
+        </div>
 
-      <div class="tags">
-        ${store.tags
-          .map(tag => `<span class="tag blue">${tag}</span>`)
-          .join("")}
+        <div class="status ${store.status}">
+          ${getStatusText(store.status)}
+        </div>
+
+        <a href="store-detail.html?storeId=${store.id}">
+          <button class="detail-btn">查看詳情 →</button>
+        </a>
       </div>
-
-      <div class="status ${store.status}">
-        ${getStatusText(store.status)}
-      </div>
-
-      <a href="store-detail.html?storeId=${store.id}">
-        <button class="detail-btn">查看詳情 →</button>
-      </a>
     `;
-
-    storeGrid.appendChild(card);
   });
 }
 
 /* =========================
    Filter Logic
-   ========================= */
+========================= */
 function applyFilters() {
+  let result = [...STORES];
   const keyword = searchInput.value.trim();
-  const city = citySelect.value;
-  const district = districtSelect.value;
 
-  let result = [...stores];
-
-  // 狀態
   if (currentStatus !== "all") {
-    result = result.filter(store => store.status === currentStatus);
+    result = result.filter(s => s.status === currentStatus);
   }
 
-  // 城市
-  if (city !== "城市") {
-    result = result.filter(store => store.city === city);
+  if (citySelect.value) {
+    result = result.filter(s => s.city === citySelect.value);
   }
 
-  // 行政區
-  if (district !== "行政區") {
-    result = result.filter(store => store.district === district);
+  if (districtSelect.value) {
+    result = result.filter(s => s.district === districtSelect.value);
   }
 
-  // 關鍵字（門市名稱）
   if (keyword) {
-    result = result.filter(store =>
-      store.name.includes(keyword)
-    );
+    result = result.filter(s => s.name.includes(keyword));
   }
 
   renderStores(result);
@@ -143,29 +128,30 @@ function applyFilters() {
 
 /* =========================
    Events
-   ========================= */
+========================= */
 searchInput.addEventListener("input", applyFilters);
-citySelect.addEventListener("change", applyFilters);
+
+citySelect.addEventListener("change", () => {
+  updateDistrictOptions();
+  applyFilters();
+});
+
 districtSelect.addEventListener("change", applyFilters);
 
-/* 定位（示意） */
 locationBtn.addEventListener("click", () => {
   if (!navigator.geolocation) {
     alert("瀏覽器不支援定位功能");
     return;
   }
-
   navigator.geolocation.getCurrentPosition(
-    () => {
-      alert("已取得你的位置（示意）\n未來可串 Google Maps API");
-    },
-    () => {
-      alert("無法取得目前位置");
-    }
+    () => alert("已取得你的位置（示意）"),
+    () => alert("無法取得目前位置")
   );
 });
 
 /* =========================
    Init
-   ========================= */
-renderStores(stores);
+========================= */
+initCityOptions();
+updateDistrictOptions();
+renderStores(STORES);

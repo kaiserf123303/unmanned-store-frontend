@@ -31,19 +31,14 @@
     <section class="product-filters">
       <select id="categoryFilter">
         <option value="">所有分類</option>
-        <option value="智慧型手機">智慧型手機</option>
-        <option value="筆記型電腦">筆記型電腦</option>
-        <option value="配件">配件</option>
-        <option value="零組件">零組件</option>
+
       </select>
 
       <input id="searchInput" type="text" placeholder="搜尋產品名稱或品牌…" />
 
       <select id="brandFilter">
         <option value="">所有品牌</option>
-        <option value="AURA">AURA</option>
-        <option value="GameSir">GameSir</option>
-        <option value="8BitDo">8BitDo</option>
+
       </select>
 
       <select id="sortFilter">
@@ -53,15 +48,12 @@
       </select>
     </section>
 
-    <!-- 商品列表（JS 動態生成） -->
+    <!-- 商品列表 -->
     <section class="product-grid" id="productGrid"></section>
 
   </main>
 
-  <!-- 一定要先載入資料 -->
   <script src="js/products-data.js"></script>
-
-  <!-- 再載入頁面邏輯 -->
   <script src="js/products.js"></script>
 </body>
 
