@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AURA｜產品詳情</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <header class="header">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA｜產品詳情</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-inner">
       <div class="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="AURA 標誌" />
@@ -20,46 +23,14 @@
         <a href="stores.html">門市</a>
         <a href="login.html" class="login">登入</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="product-detail">
-      <!-- 商品主區 -->
-      <section class="product-main">
-        <div class="product-image">
-          <img src="images/products/controller.png" alt="產品圖片" />
-        </div>
+  <main class="product-detail" id="productDetail">
+    <!-- JS 會在這裡塞內容 -->
+  </main>
 
-        <div class="product-info">
-          <h1>8BitDo Pro 2</h1>
-          <p class="price">NT$1,390</p>
+  <script src="js/product-detail.js"></script>
+</body>
 
-          <p class="description">
-            無線控制器，相容於 PC、Nintendo Switch 與 Android 裝置。
-          </p>
-
-          <div class="product-status">
-            <span class="tag operating">供應中</span>
-            <span class="tag">PC / Switch</span>
-          </div>
-
-          <div class="product-actions">
-            <button class="primary">加入比較</button>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- 規格 -->
-      <section class="product-specs">
-        <h2>產品規格</h2>
-
-        <ul>
-          <li>連線方式：Bluetooth / USB</li>
-          <li>電池：可充電式</li>
-          <li>相容平台：PC / Switch</li>
-        </ul>
-      </section>
-    </main>
-  </body>
 </html>
