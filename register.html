@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <!-- ================= Header ================= -->
   <header class="header">
     <div class="header-inner">
       <div class="logo">
@@ -17,54 +18,66 @@
         </a>
         <span>AURA</span>
       </div>
-
     </div>
   </header>
 
-  <div class="login-page">
-    <div class="login-left">
-      <img src="images/mascot-login.png" class="mascot" alt="AURA AI 助手" />
-    </div>
+  <!-- ================= Main ================= -->
+  <!-- ✅ 關鍵：登入系統一定要吃 site-width -->
+  <div class="site-width">
+    <div class="login-page">
 
-    <div class="login-right">
-      <div class="login-card">
-        <h1>建立您的帳號</h1>
-        <p class="subtitle">加入 AURA 智慧商店管理平台</p>
+      <!-- Left：Mascot -->
+      <div class="login-left">
+        <img src="images/mascot-login.png" class="mascot" alt="AURA AI 助手" />
+      </div>
 
-        <form>
-          <label>姓名</label>
-          <input type="text" />
+      <!-- Right：Register Card -->
+      <div class="login-right">
+        <div class="login-card">
+          <h1>建立您的帳號</h1>
+          <p class="subtitle">加入 AURA 智慧商店管理平台</p>
 
-          <label>電子郵件</label>
-          <input type="email" />
+          <form>
+            <label>姓名</label>
+            <input type="text" />
 
-          <label>密碼</label>
-          <input type="password" />
+            <label>電子郵件</label>
+            <input type="email" />
 
-          <label>確認密碼</label>
-          <input type="password" />
+            <label>密碼</label>
+            <input type="password" />
 
-          <button>註冊</button>
-        </form>
+            <label>確認密碼</label>
+            <input type="password" />
 
-        <div class="divider"><span>或使用以下方式註冊</span></div>
+            <button type="submit">註冊</button>
+          </form>
 
-        <div class="social-login">
-          <button class="social-btn google">
-            <img src="images/icons/google.svg" /> 使用 Google 註冊
-          </button>
-          <button class="social-btn facebook">
-            <img src="images/icons/facebook.png" /> 使用 Facebook 註冊
-          </button>
-        </div>
+          <div class="divider">
+            <span>或使用以下方式註冊</span>
+          </div>
 
-        <div class="login-footer">
-          <p class="register-hint">
-            已經有帳號了？
-            <a href="login.html" class="register-link">前往登入</a>
-          </p>
+          <div class="social-login">
+            <button class="social-btn google">
+              <img src="images/icons/google.svg" alt="Google" />
+              使用 Google 註冊
+            </button>
+
+            <button class="social-btn facebook">
+              <img src="images/icons/facebook.png" alt="Facebook" />
+              使用 Facebook 註冊
+            </button>
+          </div>
+
+          <div class="login-footer">
+            <p class="register-hint">
+              已經有帳號了？
+              <a href="login.html" class="register-link">前往登入</a>
+            </p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </body>

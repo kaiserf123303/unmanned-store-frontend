@@ -1,130 +1,64 @@
-/* =========================
-   AURA 產品頁 – 前端邏輯
-   ========================= */
-
-/* ===== 商品資料（之後可換 API） ===== */
-const products = [
-  {
-    id: 101,
-    name: "AURA 遊戲控制器",
-    brand: "AURA",
-    category: "配件",
-    price: 1390,
-    image: "images/products/controller.png"
-  },
-  {
-    id: 102,
-    name: "AURA Pods",
-    brand: "AURA",
-    category: "配件",
-    price: 990,
-    image: "images/products/earbuds.png"
-  },
-  {
-    id: 103,
-    name: "AURA 鍵盤",
-    brand: "AURA",
-    category: "配件",
-    price: 1590,
-    image: "images/products/keyboard.png"
-  },
-  {
-    id: 104,
-    name: "AURA 滑鼠",
-    brand: "AURA",
-    category: "配件",
-    price: 790,
-    image: "images/products/mouse.png"
-  },
-  {
-    id: 105,
-    name: "AURA 筆記型電腦",
-    brand: "AURA",
-    category: "筆記型電腦",
-    price: 32900,
-    image: "images/products/laptop.png"
-  },
-  {
-    id: 106,
-    name: "AURA 顯示卡",
-    brand: "AURA",
-    category: "零組件",
-    price: 19900,
-    image: "images/products/gpu.png"
-  }
-];
-
-/* ===== DOM ===== */
 const grid = document.getElementById("productGrid");
+const pagination = document.getElementById("pagination");
+
 const categoryFilter = document.getElementById("categoryFilter");
 const brandFilter = document.getElementById("brandFilter");
 const searchInput = document.getElementById("searchInput");
 const sortFilter = document.getElementById("sortFilter");
 
-/* ===== 商品渲染 ===== */
-function renderProducts(list) {
-  grid.innerHTML = "";
+const PER_PAGE = 6;
+let currentPage = 1;
+let filtered = [...PRODUCTS];
 
-  if (list.length === 0) {
-    grid.innerHTML = "<p>找不到符合條件的商品</p>";
-    return;
-  }
+/* 初始化選單 */
+[...new Set(PRODUCTS.map(p => p.category))].forEach(c =>
+  categoryFilter.innerHTML += `<option>${c}</option>`
+);
+[...new Set(PRODUCTS.map(p => p.brand))].forEach(b =>
+  brandFilter.innerHTML += `<option>${b}</option>`
+);
 
-  list.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-
-    card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p class="category">${product.category}</p>
-      <p class="price">NT$${product.price.toLocaleString()}</p>
-      <button>查看詳情</button>
-    `;
-
-    card.querySelector("button").addEventListener("click", () => {
-      window.location.href =
-        `product-detail.html?productId=${product.id}`;
-    });
-
-    grid.appendChild(card);
-  });
-}
-
-/* ===== 篩選邏輯 ===== */
 function applyFilters() {
-  let result = [...products];
+  filtered = PRODUCTS.filter(p =>
+    (!categoryFilter.value || p.category === categoryFilter.value) &&
+    (!brandFilter.value || p.brand === brandFilter.value) &&
+    p.name.toLowerCase().includes(searchInput.value.toLowerCase())
+  );
 
-  if (categoryFilter.value) {
-    result = result.filter(p => p.category === categoryFilter.value);
-  }
+  if (sortFilter.value === "priceAsc") filtered.sort((a,b)=>a.price-b.price);
+  if (sortFilter.value === "priceDesc") filtered.sort((a,b)=>b.price-a.price);
 
-  if (brandFilter.value) {
-    result = result.filter(p => p.brand === brandFilter.value);
-  }
-
-  const keyword = searchInput.value.trim().toLowerCase();
-  if (keyword) {
-    result = result.filter(p =>
-      p.name.toLowerCase().includes(keyword) ||
-      p.brand.toLowerCase().includes(keyword)
-    );
-  }
-
-  if (sortFilter.value === "priceAsc") {
-    result.sort((a, b) => a.price - b.price);
-  } else if (sortFilter.value === "priceDesc") {
-    result.sort((a, b) => b.price - a.price);
-  }
-
-  renderProducts(result);
+  currentPage = 1;
+  render();
 }
 
-/* ===== 事件 ===== */
-categoryFilter.addEventListener("change", applyFilters);
-brandFilter.addEventListener("change", applyFilters);
-sortFilter.addEventListener("change", applyFilters);
-searchInput.addEventListener("input", applyFilters);
+function render() {
+  grid.innerHTML = "";
+  const start = (currentPage - 1) * PER_PAGE;
+  filtered.slice(start, start + PER_PAGE).forEach(p => {
+    grid.innerHTML += `
+      <div class="product-card">
+        <img src="${p.image}">
+        <h3>${p.name}</h3>
+        <p>NT$${p.price.toLocaleString()}</p>
+        <button onclick="location.href='product-detail.html?productId=${p.id}'">查看詳情</button>
+      </div>
+    `;
+  });
+  renderPagination();
+}
 
-/* ===== 初始化 ===== */
-renderProducts(products);
+function renderPagination() {
+  const total = Math.ceil(filtered.length / PER_PAGE);
+  pagination.innerHTML = "";
+  for (let i = 1; i <= total; i++) {
+    pagination.innerHTML += `<button class="${i===currentPage?'active':''}" onclick="goto(${i})">${i}</button>`;
+  }
+}
+
+function goto(p) { currentPage = p; render(); }
+
+[categoryFilter, brandFilter, sortFilter].forEach(el => el.onchange = applyFilters);
+searchInput.oninput = applyFilters;
+
+render();
