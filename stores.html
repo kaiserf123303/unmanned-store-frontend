@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AURA｜智慧門市</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <!-- Header -->
-    <header class="header">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA｜智慧門市</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
       <div class="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="AURA 標誌" />
@@ -21,104 +24,46 @@
         <a href="#" class="active">門市</a>
         <a href="login.html" class="login">登入</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <!-- Main -->
-    <main class="container">
-      <!-- Page Title -->
-      <section class="page-header">
-        <h1>智慧門市</h1>
+  <!-- Main -->
+  <main class="container">
+    <!-- Page Title -->
+    <section class="page-header">
+      <h1>智慧門市</h1>
 
-        <!-- Filter Tabs -->
-        <div class="store-filters">
-          <div class="filter-row">
-            <select class="filter-select">
-              <option>城市</option>
-              <option>台北市</option>
-              <option>新北市</option>
-              <option>台中市</option>
-            </select>
+      <div class="store-filters">
+        <div class="filter-row">
+          <select class="filter-select">
+            <option>城市</option>
+            <option>台北市</option>
+            <option>新北市</option>
+            <option>台中市</option>
+          </select>
 
-            <select class="filter-select">
-              <option>行政區</option>
-              <option>信義區</option>
-              <option>中正區</option>
-              <option>大安區</option>
-            </select>
-          </div>
-
-          <div class="filter-row">
-            <input
-              class="filter-input"
-              type="text"
-              placeholder="搜尋門市名稱"
-            />
-          </div>
-
-          <button class="location-btn">📍 使用目前位置</button>
-        </div>
-      </section>
-
-      <!-- Store List -->
-      <section class="store-grid">
-        <!-- Store Card -->
-        <div class="store-card">
-          <img src="images/store.png" class="store-image" />
-
-          <h3>AURA 台北旗艦門市</h3>
-          <p class="address">台北市 台北大道一段 1 號</p>
-
-          <div class="tags">
-            <span class="tag green">筆記型電腦</span>
-            <span class="tag blue">配件</span>
-            <span class="tag purple">零組件</span>
-          </div>
-
-          <div class="status operating">● 營運中</div>
-          <a href="store-detail.html">
-            <button class="detail-btn">查看詳情 →</button>
-          </a>
+          <select class="filter-select">
+            <option>行政區</option>
+            <option>信義區</option>
+            <option>中正區</option>
+            <option>大安區</option>
+          </select>
         </div>
 
-        <!-- Store Card -->
-        <div class="store-card">
-          <img src="images/store.png" class="store-image" />
-
-          <h3>AURA 信義門市</h3>
-          <p class="address">台北市 信義路 88 號</p>
-
-          <div class="tags">
-            <span class="tag blue">智慧型手機</span>
-            <span class="tag blue">配件</span>
-          </div>
-
-          <div class="status restocking">● 補貨中</div>
-
-          <a href="store-detail.html">
-            <button class="detail-btn">查看詳情 →</button>
-          </a>
+        <div class="filter-row">
+          <input class="filter-input" type="text" placeholder="搜尋門市名稱" />
         </div>
 
-        <!-- Store Card -->
-        <div class="store-card">
-          <img src="images/store.png" class="store-image" />
+        <button class="location-btn">📍 使用目前位置</button>
+      </div>
+    </section>
 
-          <h3>AURA 台北萬華門市</h3>
-          <p class="address">台北市 萬華街 27 號</p>
+    <!-- 🔥 JS 會把卡片渲染進這裡 -->
+    <section class="store-grid" id="storeGrid"></section>
+  </main>
 
-          <div class="tags">
-            <span class="tag green">筆記型電腦</span>
-            <span class="tag green">智慧型手機</span>
-            <span class="tag blue">配件</span>
-          </div>
+  <!-- 🔥 一定要加 -->
+  <script src="js/stores.js"></script>
+</body>
 
-          <div class="status maintenance">● 維護中</div>
-
-          <a href="store-detail.html">
-            <button class="detail-btn">查看詳情 →</button>
-          </a>
-        </div>
-      </section>
-    </main>
-  </body>
 </html>

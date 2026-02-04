@@ -8,7 +8,8 @@
 
 body {
   margin: 0;
-  background: #f5f7fb;
+  background: #ffffff;
+  color: #222;
 }
 
 /* =====================
@@ -16,22 +17,22 @@ body {
 ===================== */
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 18px 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 14px 30px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 60px;
   color: #3A5177;
 }
 
 .logo img {
-  width: 56px;
+  width: 172.97px;
   height: auto;
 }
 

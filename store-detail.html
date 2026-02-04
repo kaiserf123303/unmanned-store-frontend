@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <title>AURA｜門市詳情</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <!-- Header（沿用） -->
-    <header class="header">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA｜門市詳情</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Header（沿用） -->
+  <header class="header">
+    <div class="header-inner">
       <div class="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="AURA 標誌" />
@@ -21,51 +24,56 @@
         <a href="stores.html" class="active">門市</a>
         <a href="login.html" class="login">登入</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="store-detail">
-      <!-- 門市資訊 -->
-      <section class="store-hero">
-        <!-- 左：門市資訊 -->
-        <div class="store-info">
-          <h1 class="store-name">AURA 台北旗艦門市</h1>
+  <main class="store-detail">
 
-          <p class="store-address">台北市台北大道一段 1 號</p>
+    <!-- 門市資訊 -->
+    <section class="store-hero">
+      <div class="store-info">
+        <h1 class="store-name">AURA 台北旗艦門市</h1>
+        <p class="store-address">台北市台北大道一段 1 號</p>
+        <span class="store-status operating">營運中</span>
 
-          <span class="store-status operating">營運中</span>
-
-          <div class="store-tags">
-            <span>筆記型電腦</span>
-            <span>配件</span>
-            <span>零組件</span>
-          </div>
+        <div class="store-tags">
+          <span>筆記型電腦</span>
+          <span>配件</span>
+          <span>零組件</span>
         </div>
+      </div>
 
-        <!-- 右：門市主視覺 -->
-        <div class="store-visual">
-          <img src="images/store-main.png" alt="AURA 台北旗艦門市" />
-        </div>
-      </section>
+      <div class="store-visual">
+        <img src="images/store-main.png" alt="AURA 台北旗艦門市" />
+      </div>
+    </section>
 
-      <hr class="divider" />
+    <hr class="divider" />
 
-      <!-- 門市商品 -->
-      <section class="store-products">
-        <h2 class="section-title">販售中商品</h2>
+    <!-- 門市商品 -->
+    <section class="store-products">
+      <h2 class="section-title">販售中商品</h2>
 
-        <div class="product-filters">
-          <input
-            type="text"
-            class="filter-search"
-            placeholder="搜尋產品、品牌或型號…"
-          />
+      <!-- 🔽 篩選列（JS 會讀） -->
+      <div class="product-filters">
+        <input type="text" class="filter-search" id="searchInput" placeholder="搜尋產品、品牌或型號…" />
 
-          <select class="filter-select">
-            <option>所有分類</option>
-            <option>筆記型電腦</option>
-          </select>
-        </div>
-      </section>
-    </main>
-  </body>
+        <select class="filter-select" id="categoryFilter">
+          <option value="all">所有分類</option>
+          <option value="laptop">筆記型電腦</option>
+          <option value="accessory">配件</option>
+          <option value="component">零組件</option>
+        </select>
+      </div>
+
+      <!-- 🔽 商品容器（重點：裡面不要寫任何卡片） -->
+      <div class="product-grid" id="productGrid"></div>
+
+    </section>
+  </main>
+
+  <!-- JS -->
+  <script src="js/store-detail.js"></script>
+</body>
+
 </html>
