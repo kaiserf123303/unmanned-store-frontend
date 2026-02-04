@@ -1,69 +1,61 @@
 <!doctype html>
 <html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AURA｜登入</title>
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA｜登入</title>
-  <link rel="stylesheet" href="css/login.css" />
-</head>
-
-<body>
-  <header class="header">
-    <div class="header-inner">
+  <body>
+    <header class="header">
       <div class="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="AURA 標誌" />
         </a>
         <span>AURA</span>
       </div>
+    </header>
 
-    </div>
+    <div class="login-page">
+      <div class="login-left">
+        <img src="images/mascot-login.png" class="mascot" alt="AURA AI 助手" />
+      </div>
 
+      <div class="login-right">
+        <div class="login-card">
+          <h1>歡迎回來</h1>
+          <p class="subtitle">登入 AURA 智慧商店管理平台</p>
 
-  </header>
+          <form>
+            <label>電子郵件</label>
+            <input type="email" placeholder="you@example.com" />
 
-  <div class="login-page">
-    <div class="login-left">
-      <img src="images/mascot-login.png" class="mascot" alt="AURA AI 助手" />
-    </div>
+            <label>密碼</label>
+            <input type="password" />
 
-    <div class="login-right">
-      <div class="login-card">
-        <h1>歡迎回來</h1>
-        <p class="subtitle">登入 AURA 智慧商店管理平台</p>
+            <button>登入</button>
+          </form>
 
-        <form>
-          <label>電子郵件</label>
-          <input type="email" placeholder="you@example.com" />
+          <div class="divider"><span>或使用以下方式登入</span></div>
 
-          <label>密碼</label>
-          <input type="password" />
+          <div class="social-login">
+            <button class="social-btn google">
+              <img src="images/icons/google.svg" /> 使用 Google 登入
+            </button>
+            <button class="social-btn facebook">
+              <img src="images/icons/facebook.png" /> 使用 Facebook 登入
+            </button>
+          </div>
 
-          <button>登入</button>
-        </form>
-
-        <div class="divider"><span>或使用以下方式登入</span></div>
-
-        <div class="social-login">
-          <button class="social-btn google">
-            <img src="images/icons/google.svg" /> 使用 Google 登入
-          </button>
-          <button class="social-btn facebook">
-            <img src="images/icons/facebook.png" /> 使用 Facebook 登入
-          </button>
-        </div>
-
-        <div class="login-footer">
-          <a href="reset-password.html">忘記密碼？</a>
-          <p class="register-hint">
-            還沒有帳號？
-            <a href="register.html" class="register-link">立即註冊</a>
-          </p>
+          <div class="login-footer">
+            <a href="reset-password.html">忘記密碼？</a>
+            <p class="register-hint">
+              還沒有帳號？
+              <a href="register.html" class="register-link">立即註冊</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
