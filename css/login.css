@@ -1,89 +1,125 @@
-/* =====================
-   Base
-===================== */
+/* ==================================================
+   Base Reset
+================================================== */
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Noto Sans TC", sans-serif;
 }
 
 body {
-  margin: 0;
   background: #ffffff;
   color: #222;
+  line-height: 1.6;
 }
 
-/* =====================
-   Header (Auth Only)
-===================== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 14px 28px;
+  border-radius: 12px;
+}
+
+/* ==================================================
+   全站寬度系統
+================================================== */
+.site-width {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ==================================================
+   Header（桌機）
+================================================== */
 .header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 48px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 14px 30px;
+  justify-content: space-between;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: bold;
-  font-size: 60px;
-  color: #3A5177;
+  gap: 16px;
+  font-weight: 800;
+  font-size: 52px;
+  color: #3a5177;
+  padding-top: 4px;
 }
 
 .logo img {
-  width: 172.97px;
+  width: 100px;
   height: auto;
+  display: block;
+  margin-top: 2px;
 }
 
-/* =====================
-   Layout
-===================== */
+/* ==================================================
+   Auth Layout
+================================================== */
 .login-page {
   display: flex;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 96px);
 }
 
-/* =====================
-   Left (Mascot)
-===================== */
+/* ==================================================
+   Left – Mascot Area
+================================================== */
 .login-left {
   flex: 1;
-  position: relative;
-  background: linear-gradient(135deg, #eaf3ff, #ffffff);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 72px;
+  background: transparent;
 }
 
 .mascot {
-  position: absolute;
-  bottom: 40px;
-  left: 20px;
-  width: 560px;
+  width: 100%;
+  max-width: 600px;     /* 主視覺尺寸 */
+  height: auto;
+  transform: translateY(12px);
 }
 
-/* =====================
-   Right (Card)
-===================== */
+/* ==================================================
+   Right – Card Area
+================================================== */
 .login-right {
-  flex: 1;
+  width: 560px;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .login-card {
-  width: 520px;
-  max-width: 100%;
-  background: white;
+  width: 100%;
+  background: #ffffff;
   border-radius: 16px;
   padding: 40px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .login-card h1 {
-  margin: 0;
   font-size: 32px;
   color: #1f2937;
-  letter-spacing: -0.5px;
 }
 
 .subtitle {
@@ -91,9 +127,9 @@ body {
   color: #6b7280;
 }
 
-/* =====================
+/* ==================================================
    Form
-===================== */
+================================================== */
 form label {
   display: block;
   margin-bottom: 6px;
@@ -108,7 +144,6 @@ form input {
   border-radius: 8px;
   border: 1px solid #d1d5db;
   font-size: 15px;
-  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 form input:focus {
@@ -119,53 +154,21 @@ form input:focus {
 
 form button {
   width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
   background: #5bbcff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+  color: #ffffff;
 }
 
 form button:hover {
   background: #3fa9f5;
 }
 
-/* =====================
-   Footer / Links
-===================== */
-.login-footer {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.login-footer a {
-  color: #5bbcff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.register-hint {
-  margin-top: 14px;
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.register-link {
-  margin-left: 4px;
-  color: #5bbcff;
-  font-weight: 500;
-}
-
-/* =====================
+/* ==================================================
    Divider
-===================== */
+================================================== */
 .divider {
-  margin: 18px 0;
+  margin: 22px 0;
   display: flex;
   align-items: center;
-  text-align: center;
   color: #9ca3af;
   font-size: 14px;
 }
@@ -182,9 +185,9 @@ form button:hover {
   padding: 0 12px;
 }
 
-/* =====================
+/* ==================================================
    Social Login
-===================== */
+================================================== */
 .social-login {
   display: flex;
   flex-direction: column;
@@ -199,35 +202,37 @@ form button:hover {
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  background: #fff;
+  background: #ffffff;
   font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .social-btn img {
   width: 20px;
 }
 
-.social-btn:hover {
-  background: #f9fafb;
-  transform: translateY(-1px);
+/* ==================================================
+   Footer / Links
+================================================== */
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.social-btn.google:hover {
-  border-color: #ea4335;
+.login-footer a {
+  color: #5bbcff;
+  font-size: 14px;
 }
 
-.social-btn.facebook:hover {
-  border-color: #1877f2;
+.register-hint {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6b7280;
 }
 
-/* =====================
-   Reset only
-===================== */
-.reset-card {
-  padding-top: 32px;
+.register-link {
+  margin-left: 4px;
+  color: #5bbcff;
+  font-weight: 500;
 }
 
 .back-link {
@@ -237,51 +242,120 @@ form button:hover {
   color: #5bbcff;
 }
 
-/* =====================
-   Responsive
-===================== */
+/* ==================================================
+   Reset Page
+================================================== */
+.reset-card {
+  padding-top: 32px;
+}
+
+/* ==================================================
+   RWD – Header + Mascot 同步
+================================================== */
+
+/* ≤1200px */
 @media (max-width: 1200px) {
+  .header-inner {
+    padding: 24px 40px;
+  }
+
+  .logo {
+    font-size: 48px;
+    gap: 14px;
+  }
+
+  .logo img {
+    width: 92px;
+  }
+
   .mascot {
-    width: 520px;
-    left: -80px;
+    max-width: 520px;
   }
 }
 
-@media (max-width: 900px) {
+/* ≤1024px */
+@media (max-width: 1024px) {
+  .header-inner {
+    padding: 22px 32px;
+  }
+
+  .logo {
+    font-size: 44px;
+    gap: 12px;
+  }
+
+  .logo img {
+    width: 84px;
+  }
+
+  .mascot {
+    max-width: 460px;
+  }
+}
+
+/* ≤768px */
+@media (max-width: 768px) {
   .login-page {
     flex-direction: column;
   }
 
   .login-left {
-    height: 260px;
+    height: 320px;
+    padding-bottom: 0;
   }
 
   .mascot {
-    width: 420px;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
+    max-width: 380px;
+    transform: translateY(0);
   }
 
   .login-right {
+    width: 100%;
     padding: 40px 20px;
+  }
+
+  .header-inner {
+    padding: 18px 24px;
+  }
+
+  .logo {
+    font-size: 38px;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 72px;
+    margin-top: 0;
   }
 }
 
-@media (max-width: 600px) {
+/* ≤480px */
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 14px 20px;
+  }
+
+  .logo {
+    font-size: 30px;
+    gap: 8px;
+    padding-top: 0;
+  }
+
+  .logo img {
+    width: 56px;
+  }
+
   .mascot {
-    width: 300px;
-    opacity: 0.9;
+    display: none;
   }
 
   .login-card {
-    max-width: 360px;
     padding: 28px;
   }
-}
 
-@media (max-width: 420px) {
-  .mascot {
-    display: none;
+  button {
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 10px;
   }
 }
