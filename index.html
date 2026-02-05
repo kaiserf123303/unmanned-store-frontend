@@ -9,9 +9,12 @@
 </head>
 
 <body>
-  <!-- Header -->
+
+  <!-- ================= Header ================= -->
   <header class="header">
     <div class="header-inner">
+
+      <!-- Logo -->
       <div class="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="AURA 標誌" />
@@ -19,19 +22,27 @@
         <span>AURA</span>
       </div>
 
+      <!-- Navigation -->
       <nav class="nav">
         <a href="products.html">產品</a>
         <a href="stores.html">門市</a>
-        <a href="login.html" class="login">登入</a>
+
+        <!-- 🔥 全站登入狀態唯一錨點 -->
+        <div id="authArea">
+          <!-- 初始狀態（未登入） -->
+          <a href="login.html" class="login">登入</a>
+        </div>
       </nav>
+
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- ================= Main ================= -->
   <main>
     <section class="hero">
       <div class="hero-left">
         <h1>智慧無人<br />商店管理平台</h1>
+
         <p class="hero-desc">
           集中式 AI 平台，用於管理<br>
           無人 3C 商店中的產品、設備與庫存可用狀態。
@@ -52,6 +63,11 @@
       </div>
     </section>
   </main>
+
+  <!-- ================= Scripts ================= -->
+  <!-- 🔐 全站 Header 登入 / 會員狀態控制 -->
+  <script src="js/auth-header.js"></script>
+
 </body>
 
 </html>

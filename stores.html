@@ -22,7 +22,17 @@
       <nav class="nav">
         <a href="products.html">產品</a>
         <a href="stores.html" class="active">門市</a>
-        <a href="login.html" class="login">登入</a>
+        <span id="authArea">
+          <div class="user-menu">
+            <span class="nav-user">👤 AURA 管理員</span>
+
+            <div class="user-dropdown">
+              <a href="member.html">我的帳戶</a>
+              <a href="orders.html">購買清單</a>
+              <button id="logoutBtn" class="logout-btn">登出</button>
+            </div>
+          </div>
+        </span>
       </nav>
     </div>
   </header>
@@ -32,29 +42,29 @@
 
     <!-- Page Title -->
     <section class="page-header">
-      <h1>智慧門市</h1>
+
 
       <!-- 🔥 Filters（JS 控制） -->
       <div class="store-filters">
 
+        <!-- 🔥 全部放同一排 -->
         <div class="filter-row">
-          <!-- 城市（JS 動態產生） -->
+
           <select class="filter-select" id="citySelect">
             <option value="">城市</option>
           </select>
 
-          <!-- 行政區（JS 動態產生） -->
           <select class="filter-select" id="districtSelect">
-            <option value="">行政區</option>
+            <option value="">請先選擇城市</option>
           </select>
-        </div>
 
-        <div class="filter-row">
           <input class="filter-input" type="text" placeholder="搜尋門市名稱" />
-        </div>
 
-        <button class="location-btn">📍 使用目前位置</button>
+          <button class="location-btn">📍 使用目前位置</button>
+
+        </div>
       </div>
+
     </section>
 
     <!-- 🔥 JS 會把門市卡片渲染進這裡 -->
@@ -65,6 +75,7 @@
   <!-- ⚠️ 一定要先資料，再邏輯 -->
   <script src="js/stores-data.js"></script>
   <script src="js/stores.js"></script>
+  <script src="js/auth-header.js"></script>
 </body>
 
 </html>

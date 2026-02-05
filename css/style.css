@@ -37,7 +37,7 @@ button {
 }
 
 /* ==================================================
-   Header（RWD 穩定版）
+   Header（RWD 穩定版｜🔥 對齊已修正）
 ================================================== */
 .header {
   width: 100%;
@@ -48,12 +48,13 @@ button {
 .header-inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 28px 48px;   /* ⬅ 原本 20px → 28px */
+  padding: 28px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -61,17 +62,17 @@ button {
   font-weight: 800;
   font-size: 52px;
   color: #3a5177;
-  padding-top: 4px;   /* ⬅ 微微往下 */
 }
 
 .logo img {
   width: 100px;
   height: auto;
   display: block;
-  margin-top: 2px;   /* ⬅ 專治你這張圖的視覺重心 */
 }
 
-/* Navigation */
+/* ==================================================
+   Navigation（🔥 核心修正區）
+================================================== */
 .nav,
 .main-nav {
   display: flex;
@@ -79,18 +80,95 @@ button {
   gap: 56px;
 }
 
+/* 🔥 統一所有 Header 導覽項目的盒模型 */
+.nav > a,
+#authArea,
+#authArea a,
+.main-nav > a {
+  display: flex;
+  align-items: center;
+  line-height: 1;          /* 🔑 關掉 baseline 干擾 */
+  white-space: nowrap;
+}
+
+/* 導覽文字 */
 .nav a,
 .main-nav a {
   font-size: 20px;
   padding-bottom: 6px;
-  white-space: nowrap;
 }
 
+/* Active 狀態 */
 .nav a.active,
 .main-nav a.active {
   color: #5bbcff;
   border-bottom: 2px solid #5bbcff;
 }
+
+/* 使用者名稱 */
+.nav-user {
+  font-weight: 500;
+  color: #3a5177;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  min-width: 160px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  border-radius: 8px;
+  padding: 8px 0;
+  display: none;
+  z-index: 100;
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+.user-dropdown a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.user-dropdown a:hover {
+  background: #f1f5f9;
+}
+
+
+
+
+/* 登出 */
+.logout {
+  margin-left: 12px;
+  color: #ef4444;
+}
+
+.logout-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ef4444;
+}
+
+.logout-btn:hover {
+  background: #f1f5f9;
+}
+
 
 /* ==================================================
    Hero（首頁）
@@ -98,7 +176,7 @@ button {
 .hero {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 56px 48px 60px; /* 原本 96px → 56px */
+  padding: 56px 48px 60px;
   display: flex;
   align-items: center;
   gap: 48px;
@@ -136,23 +214,21 @@ button {
   color: #5bbcff;
 }
 
-/* Hero Right */
 .hero-right {
   flex: 1;
   position: relative;
   display: flex;
-  align-items: center;     /* ⬅ 垂直置中 */
+  align-items: center;
   justify-content: center;
 }
 
 .mascot {
-  position: relative;      /* ⬅ 不用 absolute */
-  width: 1050px;           /* ⬅ 桌機明顯放大 */
+  position: relative;
+  width: 1050px;
   max-width: 100%;
   height: auto;
-  margin-top: -40px;       /* ⬅ 微微往上提 */
+  margin-top: -40px;
 }
-
 
 /* ==================================================
    Products Page
@@ -407,6 +483,8 @@ button {
   background: #e5e7eb;
   margin: 64px 0;
 }
+
+
 
 /* ==================================================
    RWD
@@ -806,4 +884,129 @@ button {
 /* 可選：hover 微互動 */
 .store-tags span:hover {
   background: #e2e8f0;
+}
+
+
+
+/* ==================================================
+   Member Page – Profile Layout（整合版）
+================================================== */
+
+/* 會員資料卡（延伸 product-card，不限寬、不置中） */
+.member-info {
+  display: grid;
+  grid-template-columns: 1fr 260px; /* 左資料 / 右預留 */
+  gap: 48px;
+  text-align: left;
+}
+
+
+
+/* 基本資料區 */
+.member-meta {
+  display: grid;
+  gap: 20px;
+}
+
+.member-meta .info-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.member-meta .label {
+  color: #6b7280;
+}
+
+.member-meta .value {
+  font-weight: 500;
+}
+
+/* 行為區 */
+.member-actions {
+  margin-top: 36px;
+}
+
+/* ==================================================
+   RWD – Member Profile
+================================================== */
+
+@media (max-width: 768px) {
+  .member-info {
+    grid-template-columns: 1fr;
+  }
+
+  .member-header {
+    margin-bottom: 24px;
+  }
+}
+
+
+/* =========================
+   Order Product Card（電商風）
+========================= */
+
+.order-product-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left; /* 覆蓋 product-card center */
+}
+
+/* 左側商品區 */
+.order-left {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+/* 商品圖片 */
+.order-product-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 8px;
+}
+
+/* 商品文字 */
+.order-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.order-product-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.order-store {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* 訂單附加資訊 */
+.order-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* 右側金額 */
+.order-right {
+  margin-left: 32px;
+  white-space: nowrap;
+}
+
+.order-total {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ef4444;
 }

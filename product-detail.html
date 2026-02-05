@@ -21,15 +21,26 @@
       <nav class="nav">
         <a href="products.html" class="active">產品</a>
         <a href="stores.html">門市</a>
-        <a href="login.html" class="login">登入</a>
+        <span id="authArea">
+          <div class="user-menu">
+            <span class="nav-user">👤 AURA 管理員</span>
+
+            <div class="user-dropdown">
+              <a href="member.html">我的帳戶</a>
+              <a href="orders.html">購買清單</a>
+              <button id="logoutBtn" class="logout-btn">登出</button>
+            </div>
+          </div>
+        </span>
       </nav>
     </div>
   </header>
 
   <main id="productDetail" class="product-detail"></main>
-
+  <script src="js/auth-header.js"></script>
   <script src="js/products-data.js"></script>
   <script src="js/product-detail.js"></script>
+
 </body>
 
 </html>

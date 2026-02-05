@@ -13,49 +13,61 @@ let currentStatus = "all";
 /* =========================
    Init Select Options
 ========================= */
+
+// 初始化城市
 function initCityOptions() {
   const cities = [...new Set(STORES.map(s => s.city))];
+
   citySelect.innerHTML = `<option value="">城市</option>`;
-  cities.forEach(c => {
-    citySelect.innerHTML += `<option value="${c}">${c}</option>`;
+  cities.forEach(city => {
+    citySelect.innerHTML += `<option value="${city}">${city}</option>`;
   });
 }
 
+// 初始化行政區（🔥 改法二核心）
 function initDistrictOptions(districts) {
-  districtSelect.innerHTML = `<option value="">行政區</option>`;
+  districtSelect.innerHTML = "";
+
+  // 沒選城市
+  if (districts.length === 0) {
+    districtSelect.innerHTML = `<option value="">請先選擇城市</option>`;
+    districtSelect.value = "";
+    return;
+  }
+
+  // 有城市 → 塞行政區
   districts.forEach(d => {
     districtSelect.innerHTML += `<option value="${d}">${d}</option>`;
   });
+
+  // 🔥 自動選第一個行政區
+  districtSelect.value = districts[0];
 }
 
 /* =========================
    City → District 聯動
 ========================= */
-function updateDistrictOptions() {
-  let districts;
 
-  if (!citySelect.value) {
-    districts = [];
-  } else {
+function updateDistrictOptions() {
+  let districts = [];
+
+  if (citySelect.value) {
     districts = [
       ...new Set(
         STORES
-          .filter(s => s.city === citySelect.value)
-          .map(s => s.district)
+          .filter(store => store.city === citySelect.value)
+          .map(store => store.district)
       )
     ];
   }
 
   initDistrictOptions(districts);
-
-  if (districtSelect.value && !districts.includes(districtSelect.value)) {
-    districtSelect.value = "";
-  }
 }
 
 /* =========================
    Status Text
 ========================= */
+
 function getStatusText(status) {
   switch (status) {
     case "operating": return "● 營運中";
@@ -66,8 +78,9 @@ function getStatusText(status) {
 }
 
 /* =========================
-   Render
+   Render Stores
 ========================= */
+
 function renderStores(list) {
   storeGrid.innerHTML = "";
 
@@ -103,6 +116,7 @@ function renderStores(list) {
 /* =========================
    Filter Logic
 ========================= */
+
 function applyFilters() {
   let result = [...STORES];
   const keyword = searchInput.value.trim();
@@ -129,6 +143,7 @@ function applyFilters() {
 /* =========================
    Events
 ========================= */
+
 searchInput.addEventListener("input", applyFilters);
 
 citySelect.addEventListener("change", () => {
@@ -143,6 +158,7 @@ locationBtn.addEventListener("click", () => {
     alert("瀏覽器不支援定位功能");
     return;
   }
+
   navigator.geolocation.getCurrentPosition(
     () => alert("已取得你的位置（示意）"),
     () => alert("無法取得目前位置")
@@ -152,6 +168,7 @@ locationBtn.addEventListener("click", () => {
 /* =========================
    Init
 ========================= */
+
 initCityOptions();
-updateDistrictOptions();
+updateDistrictOptions(); // 初始行政區狀態
 renderStores(STORES);

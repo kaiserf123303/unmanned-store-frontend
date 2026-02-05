@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA｜我的訂單</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Header（完全沿用全站結構） -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="AURA 標誌">
+        </a>
+        <span>AURA</span>
+      </div>
+
+      <nav class="nav">
+        <a href="products.html">產品</a>
+        <a href="stores.html">門市</a>
+
+        <!-- 🔥 全站登入狀態唯一錨點 -->
+        <div id="authArea">
+          <!-- 初始狀態（未登入） -->
+          <a href="login.html" class="login">登入</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主內容（重用 Products Page 節奏） -->
+  <main class="products-page">
+
+    <!-- Page Header（與其他頁一致） -->
+    <section class="page-header">
+      <h1>我的訂單</h1>
+    </section>
+
+    <!-- 訂單列表 -->
+    <section class="orders-list">
+
+      <article class="order-item product-card order-product-card">
+
+        <!-- 左：商品 -->
+        <div class="order-left">
+          <img src="images/products/controller.png" alt="商品圖片" class="order-product-img">
+
+          <div class="order-product-info">
+            <p class="order-product-name">
+              AURA 遊戲控制器
+            </p>
+            <p class="order-store">AURA 官方旗艦店</p>
+
+            <div class="order-meta">
+              <span>訂單編號：20240218001</span>
+              <span class="order-status success">已完成</span>
+              <span>2024 / 12 / 18</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右：金額 -->
+        <div class="order-right">
+          <span class="order-total">$1,390</span>
+        </div>
+
+      </article>
+
+
+    </section>
+
+  </main>
+  <script src="js/auth-header.js"></script>
+</body>
+
+</html>
